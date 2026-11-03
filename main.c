@@ -53,6 +53,12 @@ int main(void) {
       if (ans_field[i][j] == 0) {
         for (int y = 0; y < count; y++) {
           if (all_nums[y] != 0) {
+            for (int jj = 0; jj < count; jj++) {
+              if (ans_field[jj][j] == all_nums[y]) {
+                all_nums[y] = 0;
+              }
+            }
+
             ans_field[i][j] = all_nums[y];
             all_nums[y] = 0;
             break;
