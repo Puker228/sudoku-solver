@@ -1,6 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
+int N = 9;
+
+void print_grid(int grid[N][N], char text[]) {
+  printf("%s\n", text);
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      printf("%d ", grid[i][j]);
+
+      if (j == 2 || j == 5) {
+        printf("| ");
+      }
+    }
+
+    printf("\n");
+    if (i == 2 || i == 5) {
+      printf("------+-------+------\n");
+    }
+  }
+}
+
 int main(void) {
   int field[9][9] = {
       {6, 0, 0, 0, 7, 0, 0, 0, 2}, {0, 5, 8, 3, 6, 2, 4, 7, 0},
@@ -14,68 +34,27 @@ int main(void) {
 
   memcpy(ans_field, field, sizeof(field));
 
-  printf("orig field:\n");
-  for (int i = 0; i < 9; i++) {
-    for (int j = 0; j < 9; j++) {
-      printf("%d ", field[i][j]);
-
-      if (j == 2 || j == 5) {
-        printf("| ");
-      }
-    }
-
-    printf("\n");
-    if (i == 2 || i == 5) {
-      printf("------+-------+------\n");
-    }
-  }
+  print_grid(field, "orig:");
 
   printf("\n\n");
 
-  int all_nums[9];
-  size_t count = sizeof(all_nums) / sizeof(all_nums[0]);
-
-  printf("ans field:\n");
-  for (int i = 0; i < 9; i++) {
-    for (int o = 0; o < count; o++) {
-      all_nums[o] = o + 1;
+  print_grid(ans_field, "ans:");
+  for (int row = 0; row < 9; row++) {
+    int available_nums[9];
+    for (int num = 0; num < 9; num++) {
+      available_nums[num] = num + 1;
     }
 
-    for (int j = 0; j < 9; j++) {
-      for (int x = 0; x < count; x++) {
-        if (all_nums[x] == ans_field[i][j]) {
-          all_nums[x] = 0;
+    for (int clmn = 0; clmn < 9; clmn++) {
+      for (int x = 0; x < 9; x++) {
+        if (ans_field[row][clmn] == available_nums[x]) {
+          available_nums[x] = 0;
+        }
+
+        if (ans_field[x][clmn] == available_nums[x]) {
+          available_nums[x] = 0;
         }
       }
-    }
-
-    for (int j = 0; j < 9; j++) {
-      if (ans_field[i][j] == 0) {
-        for (int y = 0; y < count; y++) {
-          if (all_nums[y] != 0) {
-            for (int jj = 0; jj < count; jj++) {
-              if (ans_field[jj][j] == all_nums[y]) {
-                all_nums[y] = 0;
-              }
-            }
-
-            ans_field[i][j] = all_nums[y];
-            all_nums[y] = 0;
-            break;
-          }
-        }
-      }
-
-      printf("%d ", ans_field[i][j]);
-      if (j == 2 || j == 5) {
-        printf("| ");
-      }
-    }
-
-    printf("\n");
-
-    if (i == 2 || i == 5) {
-      printf("------+-------+------\n");
     }
   }
 
