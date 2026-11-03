@@ -37,9 +37,10 @@ int main(void) {
 
   printf("ans field:\n");
   for (int i = 0; i < 9; i++) {
-    for (int i = 0; i < count; i++) {
-      all_nums[i] = i + 1;
+    for (int o = 0; o < count; o++) {
+      all_nums[o] = o + 1;
     }
+
     for (int j = 0; j < 9; j++) {
       for (int x = 0; x < count; x++) {
         if (all_nums[x] == ans_field[i][j]) {
@@ -47,6 +48,7 @@ int main(void) {
         }
       }
     }
+
     for (int j = 0; j < 9; j++) {
       if (ans_field[i][j] == 0) {
         for (int y = 0; y < count; y++) {
