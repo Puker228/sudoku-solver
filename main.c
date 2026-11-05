@@ -3,17 +3,22 @@
 
 #include "src/solve.h"
 
+#define N2 2
+#define N5 5
+
 static void print_grid(int grid[N][N], const char *text) {
   printf("%s\n", text);
   for (int i = 0; i < N; i++) {
     for (int j = 0; j < N; j++) {
       printf("%d ", grid[i][j]);
-      if (j == 2 || j == 5)
+      if (j == N2 || j == N5) {
         printf("| ");
+      }
     }
     printf("\n");
-    if (i == 2 || i == 5)
+    if (i == N2 || i == N5) {
       printf("------+-------+------\n");
+    }
   }
 }
 

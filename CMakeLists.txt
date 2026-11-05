@@ -4,7 +4,7 @@ project(sudoku_solver C)
 set(CMAKE_C_STANDARD 11)
 
 add_library(sudoku SHARED
-    src/solve.c
+        src/solve.c
 )
 
 target_include_directories(sudoku PUBLIC src)
