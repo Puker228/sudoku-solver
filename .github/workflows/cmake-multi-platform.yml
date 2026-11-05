@@ -14,20 +14,25 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-24.04, windows-2025, macos-26]
         build_type: [Release, Debug]
         c_compiler: [clang, cl]
         include:
-          - os: windows-latest
+          - os: windows-2025
             c_compiler: cl
             cpp_compiler: cl
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
+            c_compiler: clang
+            cpp_compiler: clang++
+          - os: macos-26
             c_compiler: clang
             cpp_compiler: clang++
         exclude:
-          - os: windows-latest
+          - os: windows-2025
             c_compiler: clang
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
+            c_compiler: cl
+          - os: macos-26
             c_compiler: cl
 
     steps:
