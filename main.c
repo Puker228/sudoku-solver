@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define N 9
+#include "src/solve.h"
 
 static void print_grid(int grid[N][N], const char *text) {
   printf("%s\n", text);
@@ -17,63 +17,13 @@ static void print_grid(int grid[N][N], const char *text) {
   }
 }
 
-static int can_place(int grid[N][N], const int row, const int col,
-                     const int num) {
-  for (int i = 0; i < N; i++) {
-    if (grid[row][i] == num) {
-      return 0;
-    }
-    if (grid[i][col] == num) {
-      return 0;
-    }
-  }
-
-  const int br = row - row % 3;
-  const int bc = col - col % 3;
-  for (int i = 0; i < 3; i++)
-    for (int j = 0; j < 3; j++)
-      if (grid[br + i][bc + j] == num) {
-        return 0;
-      }
-
-  return 1;
-}
-
-static int solve_sudoku(int grid[N][N]) {
-  for (int row = 0; row < N; row++) {
-    for (int col = 0; col < N; col++) {
-      if (grid[row][col] != 0) {
-        continue;
-      }
-
-      for (int num = 1; num <= 9; num++) {
-        if (can_place(grid, row, col, num)) {
-          grid[row][col] = num;
-          if (solve_sudoku(grid)) {
-            return 1;
-          }
-          grid[row][col] = 0;
-        }
-      }
-      return 0;
-    }
-  }
-  return 1;
-}
-
 int main(void) {
   int field[N][N] = {
-      {0, 0, 3,    9, 0, 0,    0, 2, 6}, 
-      {7, 0, 0,    0, 0, 8,    3, 0, 5},
-      {0, 0, 0,    0, 0, 0,    0, 9, 0}, 
-
-      {0, 0, 5,    0, 0, 0,    6, 0, 0},
-      {4, 0, 0,    1, 8, 3,    0, 0, 0}, 
-      {8, 0, 9,    0, 0, 6,    0, 3, 4},
-
-      {0, 5, 2,    4, 1, 0,    7, 8, 0}, 
-      {0, 8, 0,    3, 0, 0,    0, 0, 0},
-      {3, 0, 0,    8, 0, 0,    2, 0, 9},
+      {0, 0, 3, 9, 0, 0, 0, 2, 6}, {7, 0, 0, 0, 0, 8, 3, 0, 5},
+      {0, 0, 0, 0, 0, 0, 0, 9, 0}, {0, 0, 5, 0, 0, 0, 6, 0, 0},
+      {4, 0, 0, 1, 8, 3, 0, 0, 0}, {8, 0, 9, 0, 0, 6, 0, 3, 4},
+      {0, 5, 2, 4, 1, 0, 7, 8, 0}, {0, 8, 0, 3, 0, 0, 0, 0, 0},
+      {3, 0, 0, 8, 0, 0, 2, 0, 9},
   };
 
   int ans_field[N][N];
