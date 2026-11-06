@@ -1,0 +1,335 @@
+<Window Title="Sudoku Solver" Width="900" Height="520">
+	<HBox Spacing="16" Slot.Padding="16">
+		<VBox Spacing="8">
+			<Label Text="Оригинальное"/>
+			<VBox Spacing="8">
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell11" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell12" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell13" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell14" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell15" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell16" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell17" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell18" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell19" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell21" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell22" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell23" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell24" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell25" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell26" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell27" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell28" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell29" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell31" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell32" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell33" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell34" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell35" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell36" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell37" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell38" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell39" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+				</VBox>
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell41" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell42" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell43" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell44" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell45" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell46" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell47" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell48" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell49" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell51" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell52" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell53" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell54" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell55" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell56" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell57" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell58" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell59" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell61" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell62" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell63" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell64" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell65" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell66" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell67" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell68" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell69" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+				</VBox>
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell71" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell72" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell73" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell74" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell75" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell76" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell77" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell78" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell79" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell81" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell82" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell83" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell84" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell85" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell86" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell87" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell88" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell89" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell91" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell92" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell93" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell94" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell95" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell96" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="OriginalCell97" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell98" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+							<TextBox Name="OriginalCell99" Width="36" Height="36" MaxLength="1" TextAlign="Center"/>
+						</HBox>
+					</HBox>
+				</VBox>
+			</VBox>
+		</VBox>
+
+		<Button Name="SolveButton" Text="Решить" Width="72" Height="16" Slot.VAlign="Center"/>
+
+		<VBox Spacing="8">
+			<Label Text="Решенное"/>
+			<VBox Spacing="8">
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell11" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell12" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell13" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell14" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell15" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell16" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell17" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell18" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell19" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell21" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell22" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell23" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell24" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell25" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell26" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell27" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell28" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell29" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell31" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell32" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell33" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell34" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell35" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell36" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell37" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell38" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell39" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+				</VBox>
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell41" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell42" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell43" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell44" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell45" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell46" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell47" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell48" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell49" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell51" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell52" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell53" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell54" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell55" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell56" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell57" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell58" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell59" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell61" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell62" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell63" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell64" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell65" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell66" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell67" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell68" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell69" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+				</VBox>
+				<VBox Spacing="2">
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell71" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell72" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell73" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell74" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell75" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell76" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell77" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell78" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell79" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell81" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell82" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell83" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell84" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell85" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell86" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell87" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell88" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell89" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+					<HBox Spacing="8">
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell91" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell92" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell93" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell94" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell95" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell96" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+						<HBox Spacing="2">
+							<TextBox Name="SolvedCell97" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell98" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+							<TextBox Name="SolvedCell99" Width="36" Height="36" MaxLength="1" TextAlign="Center" IsReadOnly="True"/>
+						</HBox>
+					</HBox>
+				</VBox>
+			</VBox>
+		</VBox>
+	</HBox>
+</Window>
