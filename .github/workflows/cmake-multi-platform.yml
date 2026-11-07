@@ -75,7 +75,7 @@ jobs:
 
       - name: Configure CMake for iOS
         run: >
-          cmake -S ${{ github.workspace }} -B build/ios -G Xcode --parallel
+          cmake -S ${{ github.workspace }} -B build/ios -G Xcode
           -DCMAKE_SYSTEM_NAME=iOS
           -DCMAKE_OSX_SYSROOT=iphoneos
           -DCMAKE_OSX_ARCHITECTURES=arm64
