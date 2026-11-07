@@ -1,4 +1,5 @@
 #include "Raven.h"
+#include "solve.h"
 
 #include <stdio.h>
 
@@ -9,7 +10,35 @@ static void on_quit(Rid sender, const char *action, void *user_data) {
   Rquit(0);
 }
 
-static void solve_button(Rid button, void *user_data) {}
+static void solve_button(Rid button, void *user_data) {
+  (void)button;
+  Rid window = *(Rid *)user_data;
+  int grid[N][N] = {{0}};
+
+  for (int row = 0; row < N; row++) {
+    for (int column = 0; column < N; column++) {
+      char name[16];
+      snprintf(name, sizeof(name), "OriginalCell%d%d", row + 1, column + 1);
+      Rid cell = Rwidget_find(window, name);
+      const char *text = Rtext_input_get_text(cell);
+      if (text[0] != '\0')
+        grid[row][column] = text[0] - '0';
+    }
+  }
+
+  if (!solve_sudoku(grid))
+    return;
+
+  for (int row = 0; row < N; row++) {
+    for (int column = 0; column < N; column++) {
+      char name[16];
+      snprintf(name, sizeof(name), "SolvedCell%d%d", row + 1, column + 1);
+      Rid cell = Rwidget_find(window, name);
+      char value[2] = {grid[row][column] + '0', '\0'};
+      Rtext_input_set_text(cell, value);
+    }
+  }
+}
 
 static int validate_cell_input(Rid widget, const REvent *event,
                                void *user_data) {
@@ -36,6 +65,10 @@ int main(void) {
         Rwidget_set_event_callback(cell, validate_cell_input, NULL);
     }
   }
+
+  Rid button = Rwidget_find(window, "SolveButton");
+  if (button != R_INVALID_ID)
+    Rbutton_set_clicked_callback(button, solve_button, &window);
 
   while (Rwait_frame(-1.0)) {
   }
