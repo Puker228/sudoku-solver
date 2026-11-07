@@ -16,6 +16,13 @@ add_executable(sudoku_solver
 
 target_link_libraries(sudoku_solver PRIVATE sudoku)
 
+if(APPLE)
+    set_target_properties(sudoku_solver PROPERTIES
+        BUILD_WITH_INSTALL_RPATH TRUE
+        INSTALL_RPATH "@loader_path"
+    )
+endif()
+
 if(SUDOKU_BUILD_GUI)
     include(FetchContent)
 
@@ -51,4 +58,11 @@ if(SUDOKU_BUILD_GUI)
         sudoku
         raven::raven
     )
+
+    if(APPLE)
+        set_target_properties(sudoku_gui PROPERTIES
+            BUILD_WITH_INSTALL_RPATH TRUE
+            INSTALL_RPATH "@loader_path"
+        )
+    endif()
 endif()
