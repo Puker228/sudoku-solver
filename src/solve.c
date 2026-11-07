@@ -24,7 +24,7 @@ static int can_place(int grid[N][N], const int row, const int col,
   return 1;
 }
 
-int solve_sudoku(int grid[N][N]) {
+static int solve_grid(int grid[N][N]) {
   for (int row = 0; row < N; row++) {
     for (int col = 0; col < N; col++) {
       if (grid[row][col] != 0) {
@@ -34,7 +34,7 @@ int solve_sudoku(int grid[N][N]) {
       for (int num = 1; num <= N; num++) {
         if (can_place(grid, row, col, num)) {
           grid[row][col] = num;
-          if (solve_sudoku(grid)) {
+          if (solve_grid(grid)) {
             return 1;
           }
           grid[row][col] = 0;
@@ -44,4 +44,27 @@ int solve_sudoku(int grid[N][N]) {
     }
   }
   return 1;
+}
+
+int solve_sudoku(int grid[N][N]) {
+  for (int row = 0; row < N; row++) {
+    for (int col = 0; col < N; col++) {
+      const int num = grid[row][col];
+      if (num == 0) {
+        continue;
+      }
+      if (num < 1 || num > N) {
+        return 0;
+      }
+
+      grid[row][col] = 0;
+      const int valid = can_place(grid, row, col, num);
+      grid[row][col] = num;
+      if (!valid) {
+        return 0;
+      }
+    }
+  }
+
+  return solve_grid(grid);
 }
