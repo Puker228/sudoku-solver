@@ -1,5 +1,6 @@
 <Window Title="Sudoku Solver" Width="900" Height="520">
-	<HBox Spacing="16" Slot.Padding="16">
+	<VBox Spacing="16" Slot.Padding="16">
+		<HBox Spacing="16" Slot.HAlign="Center">
 		<VBox Spacing="8">
 			<Label Text="Оригинальное"/>
 			<VBox Spacing="8">
@@ -165,8 +166,6 @@
 			</VBox>
 		</VBox>
 
-		<Button Name="SolveButton" Text="Решить" Width="72" Height="16" Slot.VAlign="Center"/>
-
 		<VBox Spacing="8">
 			<Label Text="Решенное"/>
 			<VBox Spacing="8">
@@ -331,5 +330,7 @@
 				</VBox>
 			</VBox>
 		</VBox>
-	</HBox>
+		</HBox>
+		<Button Name="SolveButton" Text="Решить" Width="120" Height="40" Slot.HAlign="Center"/>
+	</VBox>
 </Window>
