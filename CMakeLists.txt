@@ -37,6 +37,12 @@ if(SUDOKU_BUILD_GUI)
         gui/gui.c
     )
 
+    add_custom_command(TARGET sudoku_gui POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${CMAKE_CURRENT_SOURCE_DIR}/gui/window.xml"
+            "$<TARGET_FILE_DIR:sudoku_gui>/window.xml"
+    )
+
     target_include_directories(sudoku_gui PRIVATE
         "/gui"
     )
