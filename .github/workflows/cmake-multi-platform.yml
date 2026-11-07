@@ -44,6 +44,12 @@ jobs:
         run: |
           echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
 
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libx11-dev
+
       - name: Configure CMake
         run: >
           cmake -B ${{ steps.strings.outputs.build-output-dir }}
@@ -75,6 +81,7 @@ jobs:
           -DCMAKE_OSX_ARCHITECTURES=arm64
           -DCMAKE_OSX_DEPLOYMENT_TARGET=15.0
           -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO
+          -DSUDOKU_BUILD_GUI=OFF
 
       - name: Build iOS
         run: cmake --build build/ios --config Release
@@ -104,6 +111,7 @@ jobs:
           -DANDROID_ABI=${{ matrix.abi }}
           -DANDROID_PLATFORM=android-21
           -DCMAKE_BUILD_TYPE=Release
+          -DSUDOKU_BUILD_GUI=OFF
 
       - name: Build Android
         run: cmake --build build/android/${{ matrix.abi }} --parallel
