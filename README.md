@@ -9,6 +9,12 @@ cmake -B build
 cmake --build build
 ```
 
+or
+
+```shell
+make build
+```
+
 ## Python example
 
 The example in [`examples/python/main.py`](examples/python/main.py) uses
